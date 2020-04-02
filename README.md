@@ -1,3 +1,5 @@
+This is still heavily WIP and mostly untested!
+
 ### `visnetwork-facade`
 
 Strongly-typed scala.js facade for [`vis-network`][visjs], written to target
