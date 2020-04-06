@@ -5,6 +5,7 @@ import scala.scalajs.js
 import js.annotation._
 import js.|
 
+/** See [[https://visjs.github.io/vis-network/docs/network/#methods]] */
 @js.native
 @JSGlobal("vis.Network")
 class Network(container: raw.HTMLElement, data: Data, options: Network.Options) extends js.Object {
@@ -71,19 +72,131 @@ class Network(container: raw.HTMLElement, data: Data, options: Network.Options) 
 }
 object Network {
 
+  /** See [[https://visjs.github.io/vis-network/docs/network/#options]] */
   trait Options extends js.Object {
     val autoResize: js.UndefOr[Boolean] = js.undefined
     val width: js.UndefOr[String] = js.undefined
     val height: js.UndefOr[String] = js.undefined
     val clickToUse: js.UndefOr[Boolean] = js.undefined
-    val configure: js.UndefOr[js.Any] = js.undefined
+    val configure: js.UndefOr[Options.Configure] = js.undefined
     val edges: js.UndefOr[EdgeOptions] = js.undefined
     val nodes: js.UndefOr[NodeOptions] = js.undefined
-    val groups: js.UndefOr[js.Any] = js.undefined
-    val layout: js.UndefOr[js.Any] = js.undefined
-    val interaction: js.UndefOr[js.Any] = js.undefined
+    val groups: js.UndefOr[Options.Groups] = js.undefined
+    val layout: js.UndefOr[Options.Layout] = js.undefined
+    val interaction: js.UndefOr[Options.Interaction] = js.undefined
     val manipulation: js.UndefOr[js.Any] = js.undefined
-    val physics: js.UndefOr[js.Any] = js.undefined
+    val physics: js.UndefOr[Options.Physics] = js.undefined
+  }
+
+  object Options {
+    /** See [[https://visjs.github.io/vis-network/docs/network/configure.html]] */
+    trait Configure extends js.Object {
+      val enabled: js.UndefOr[Boolean] = js.undefined
+      val filter: js.UndefOr[js.Any] = js.undefined
+      val container: js.UndefOr[js.Any] = js.undefined
+      val showButton: js.UndefOr[Boolean] = js.undefined
+    }
+
+    /** See [[https://visjs.github.io/vis-network/docs/network/groups.html]] */
+    trait Groups extends js.Object {
+      val useDefaultGroups: js.UndefOr[Boolean] = js.undefined
+    }
+
+    /** See [[https://visjs.github.io/vis-network/docs/network/layout.html]] */
+    trait Layout extends js.Object {
+      val randomSeed: js.UndefOr[Double] = js.undefined
+      val improvedLayout: js.UndefOr[Boolean] = js.undefined
+      val clusterThreshold: js.UndefOr[Int] = js.undefined
+      val hierarchical: js.UndefOr[js.Any] = js.undefined
+    }
+
+    /** See [[https://visjs.github.io/vis-network/docs/network/interaction.html]] */
+    trait Interaction extends js.Object {
+      val dragNodes: js.UndefOr[Boolean] = js.undefined
+      val dragView: js.UndefOr[Boolean] = js.undefined
+      val hideEdgesOnDrag: js.UndefOr[Boolean] = js.undefined
+      val hideEdgesOnZoom: js.UndefOr[Boolean] = js.undefined
+      val hideNodesOnDrag: js.UndefOr[Boolean] = js.undefined
+      val hover: js.UndefOr[Boolean] = js.undefined
+      val hoverConnectedEdges: js.UndefOr[Boolean] = js.undefined
+      val keyboard: js.UndefOr[js.Any] = js.undefined
+      val multiselect: js.UndefOr[Boolean] = js.undefined
+      val navigationButtons: js.UndefOr[Boolean] = js.undefined
+      val selectable: js.UndefOr[Boolean] = js.undefined
+      val selectConnectedEdges: js.UndefOr[Boolean] = js.undefined
+      val tooltipDelay: js.UndefOr[Int] = js.undefined
+      val zoomView: js.UndefOr[Boolean] = js.undefined
+    }
+
+    /** See [[https://visjs.github.io/vis-network/docs/network/physics.html]] */
+    trait Physics extends js.Object {
+      val enabled: js.UndefOr[Boolean] = js.undefined
+      val barnesHut: js.UndefOr[Physics.BarnesHut] = js.undefined
+      val forceAtlas2Based: js.UndefOr[Physics.ForceAtlas2Based] = js.undefined
+      val repulsion: js.UndefOr[Physics.Repulsion] = js.undefined
+      val hierarchicalRepulsion: js.UndefOr[Physics.HierarchicalRepulsion] = js.undefined
+      val maxVelocity: js.UndefOr[Double] = js.undefined
+      val minVelocity: js.UndefOr[Double] = js.undefined
+      val solver: js.UndefOr[String] = js.undefined
+      val stabilization: js.UndefOr[Physics.Stabilization | Boolean] = js.undefined
+      val timestep: js.UndefOr[Double] = js.undefined
+      val adaptiveTimestep: js.UndefOr[Boolean] = js.undefined
+      val wind: js.UndefOr[Physics.Wind] = js.undefined
+
+    }
+
+    object Physics {
+
+      trait BarnesHut extends js.Object {
+        val theta: js.UndefOr[Double] = js.undefined
+        val gravitationalConstant: js.UndefOr[Double] = js.undefined
+        val centralGravity: js.UndefOr[Double] = js.undefined
+        val springLength: js.UndefOr[Double] = js.undefined
+        val springConstant: js.UndefOr[Double] = js.undefined
+        val damping: js.UndefOr[Double] = js.undefined
+        val avoidOverlap: js.UndefOr[Double] = js.undefined
+      }
+
+      trait ForceAtlas2Based extends js.Object {
+        val theta: js.UndefOr[Double] = js.undefined
+        val gravitationalConstant: js.UndefOr[Double] = js.undefined
+        val centralGravity: js.UndefOr[Double] = js.undefined
+        val springLength: js.UndefOr[Double] = js.undefined
+        val springConstant: js.UndefOr[Double] = js.undefined
+        val damping: js.UndefOr[Double] = js.undefined
+        val avoidOverlap: js.UndefOr[Double] = js.undefined
+      }
+
+      trait Repulsion extends js.Object {
+        val nodeDistance: js.UndefOr[Double] = js.undefined
+        val centralGravity: js.UndefOr[Double] = js.undefined
+        val springLength: js.UndefOr[Double] = js.undefined
+        val springConstant: js.UndefOr[Double] = js.undefined
+        val damping: js.UndefOr[Double] = js.undefined
+      }
+
+      trait HierarchicalRepulsion extends js.Object {
+        val nodeDistance: js.UndefOr[Double] = js.undefined
+        val centralGravity: js.UndefOr[Double] = js.undefined
+        val springLength: js.UndefOr[Double] = js.undefined
+        val springConstant: js.UndefOr[Double] = js.undefined
+        val damping: js.UndefOr[Double] = js.undefined
+        val avoidOverlap: js.UndefOr[Double] = js.undefined
+      }
+
+      trait Stabilization extends js.Object {
+        val enabled: js.UndefOr[Boolean] = js.undefined
+        val iterations: js.UndefOr[Int] = js.undefined
+        val updateInterval: js.UndefOr[Int] = js.undefined
+        val onlyDynamicEdges: js.UndefOr[Boolean] = js.undefined
+        val fit: js.UndefOr[Boolean] = js.undefined
+      }
+
+      trait Wind extends js.Object {
+        val x: Double
+        val y: Double
+      }
+    }
   }
 
   trait ConnectedEdges extends js.Object {
@@ -184,6 +297,7 @@ trait ImagePadding extends js.Object {
   val left: js.UndefOr[Double] = js.undefined
 }
 
+/** See [[https://visjs.github.io/vis-network/docs/network/nodes.html]] */
 trait NodeOptions extends js.Object {
   val borderWidth: js.UndefOr[Double] = js.undefined
   val borderWidthSelected: js.UndefOr[Double] = js.undefined
@@ -287,6 +401,7 @@ trait Font extends js.Object {
   val mono: js.UndefOr[String | FontOptions] = js.undefined
 }
 
+/** See [[https://visjs.github.io/vis-network/docs/network/edges.html]] */
 trait EdgeOptions extends js.Object {
   val arrows: js.UndefOr[String | EdgeOptions.Arrows] = js.undefined
   val arrowStrikethrough: js.UndefOr[Boolean] = js.undefined

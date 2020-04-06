@@ -16,6 +16,7 @@ package object visnetwork {
 
   type TimelineAnimationType = Boolean | AnimationOptions
 
+  /** See [[https://visjs.github.io/vis-network/docs/network/#Events]] */
   type NetworkEvents = String
   object NetworkEvents {
     val click: NetworkEvents = "click"
