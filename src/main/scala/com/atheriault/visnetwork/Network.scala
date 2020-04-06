@@ -89,6 +89,7 @@ object Network {
   }
 
   object Options {
+
     /** See [[https://visjs.github.io/vis-network/docs/network/configure.html]] */
     trait Configure extends js.Object {
       val enabled: js.UndefOr[Boolean] = js.undefined
