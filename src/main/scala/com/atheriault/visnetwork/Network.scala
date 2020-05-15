@@ -56,7 +56,7 @@ class Network(container: raw.HTMLElement, data: Data, options: Network.Options) 
   def getSelection(): Network.Selection = js.native
   def getSelectedNodes(): js.Array[IdType] = js.native
   def getSelectedEdges(): js.Array[IdType] = js.native
-  def getNodeAt(position: Position): IdType = js.native
+  def getNodeAt(position: Position): js.UndefOr[IdType] = js.native
   def getEdgeAt(position: Position): IdType = js.native
   def selectNodes(nodeIds: js.Array[IdType], highlightEdges: Boolean = ???): Unit = js.native
   def selectEdges(edgeIds: js.Array[IdType]): Unit = js.native
