@@ -3,7 +3,6 @@ lazy val root = project.in(file("."))
   .settings(
     name := "vis-network Facade",
     normalizedName := "visnetwork-facade",
-    version := "0.1",
     organization := "com.atheriault",
     scalaVersion := "2.13.1",
     scalacOptions in ThisBuild ++= Seq("-feature", "-deprecation"),
