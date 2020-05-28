@@ -127,6 +127,7 @@ object Network {
       val selectConnectedEdges: js.UndefOr[Boolean] = js.undefined
       val tooltipDelay: js.UndefOr[Int] = js.undefined
       val zoomView: js.UndefOr[Boolean] = js.undefined
+      val zoomSpeed: js.UndefOr[Double] = js.undefined
     }
 
     /** See [[https://visjs.github.io/vis-network/docs/network/physics.html]] */
